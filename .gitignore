@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+.venv/
+env/
+ENV/
+
+# PyInstaller build artifacts
+build/
+dist/
+*.spec
+!CobolGenerater/CobolGenerater.spec
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test / temporary outputs
+CobolGenerater/tmp_test/
+*.exe
+*.cbl
+!test/*.cbl
+
+# OS
+.DS_Store
+Thumbs.db

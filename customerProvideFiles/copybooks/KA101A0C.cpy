@@ -1,0 +1,30 @@
+      * 被保険者履歴アンロードファイルレコード定義
+       01  KA101A0C.
+           05  HHS-BNG             PIC X(10).
+           05  HHS-RRK-TUBN        PIC 9(05).
+           05  HHS-KJN-BNG         PIC X(10).
+           05  HHS-KJN-KBN-CD      PIC X(02).
+           05  HHS-SKST-JYU-CD     PIC X(02).
+           05  HHS-SKST-YMD        PIC 9(08).
+           05  HHS-SKSS-JYU-CD     PIC X(02).
+           05  HHS-SKSS-YMD        PIC 9(08).
+           05  HHS-IDO-YMD         PIC 9(08).
+           05  HHS-SHMKJ           PIC X(40).
+           05  HHS-TS-NMKJ         PIC X(40).
+           05  HHS-SHMKN           PIC X(40).
+           05  HHS-TS-NMKN         PIC X(40).
+           05  HHS-BRTH-YMD        PIC 9(08).
+           05  HHS-SEX-CD          PIC X(01).
+           05  HHS-TDFK-NMKJ       PIC X(10).
+           05  HHS-STS-NMKJ        PIC X(20).
+           05  HHS-ADDR-KJ         PIC X(100).
+           05  HHS-BNTI-KJ         PIC X(50).
+           05  HHS-KTGK-KJ         PIC X(50).
+           05  HHS-JTS-KBN-CD      PIC X(02).
+           05  HHS-JTST-BGN-YMD    PIC 9(08).
+           05  HHS-JTST-END-YMD    PIC 9(08).
+           05  HHS-TYJ-JYU-CD      PIC X(02).
+           05  HHS-TYJ-BGN-YMD     PIC 9(08).
+           05  HHS-TYJ-END-YMD     PIC 9(08).
+           05  KSIN-YMD            PIC 9(08).
+           05  SKSI-YMD            PIC 9(08).

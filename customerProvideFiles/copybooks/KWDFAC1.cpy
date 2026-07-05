@@ -1,0 +1,29 @@
+      * 介護保険資格情報ファイルレコード定義
+       01  KWDFAC1.
+           05  HHS-BNG             PIC X(10).
+           05  HHS-RRK-TUBN        PIC 9(05).
+           05  KJN-BNG             PIC X(10).
+           05  KJN-KBN-CD          PIC X(02).
+           05  SKST-JYU-CD         PIC X(02).
+           05  SKST-YMD            PIC 9(08).
+           05  SKSS-JYU-CD         PIC X(02).
+           05  SKSS-YMD            PIC 9(08).
+           05  HHS-SHMKJ           PIC X(40).
+           05  HHS-TS-NMKJ         PIC X(40).
+           05  HHS-SHMKN           PIC X(40).
+           05  HHS-TS-NMKN         PIC X(40).
+           05  HHS-BRTH-YMD        PIC 9(08).
+           05  HHS-SEX-CD          PIC X(01).
+           05  HHS-TDFK-NMKJ       PIC X(10).
+           05  HHS-STS-NMKJ        PIC X(20).
+           05  HHS-ADDR-KJ         PIC X(100).
+           05  HHS-BNTI-KJ         PIC X(50).
+           05  HHS-KTGK-KJ         PIC X(50).
+           05  JTS-KBN-CD          PIC X(02).
+           05  JTST-BGN-YMD        PIC 9(08).
+           05  JTST-END-YMD        PIC 9(08).
+           05  TYJ-JYU-CD          PIC X(02).
+           05  TYJ-BGN-YMD         PIC 9(08).
+           05  TYJ-END-YMD         PIC 9(08).
+           05  KSIN-YMD            PIC 9(08).
+           05  SKSI-YMD            PIC 9(08).

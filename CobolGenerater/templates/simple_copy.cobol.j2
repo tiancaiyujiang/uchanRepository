@@ -1,0 +1,60 @@
+      *> 本程序由 COBOL Generator 自动生成
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. {{ program.program_id }}.
+       AUTHOR. {{ program.author }}.
+       REMARKS. {{ program.remarks or "自动生成的简单复制/计数程序" }}.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT {{ program.input_file.name }} ASSIGN TO "{{ program.input_file.file_path }}"
+               ORGANIZATION IS LINE SEQUENTIAL.
+           SELECT {{ program.output_file.name }} ASSIGN TO "{{ program.output_file.file_path }}"
+               ORGANIZATION IS LINE SEQUENTIAL.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD  {{ program.input_file.name }}.
+       01  {{ program.input_file.name }}-RECORD.
+       {% for field in program.input_file.fields %}
+           05  {{ field.name }} PIC {{ field.pic }}.
+       {% endfor %}
+
+       FD  {{ program.output_file.name }}.
+       01  {{ program.output_file.name }}-RECORD.
+       {% for field in program.output_file.fields %}
+           05  {{ field.name }} PIC {{ field.pic }}.
+       {% endfor %}
+
+       WORKING-STORAGE SECTION.
+       01  WS-EOF-SWITCH     PIC X VALUE 'N'.
+       01  WS-RECORD-COUNT   PIC 9(10) VALUE 0.
+       01  WS-DISPLAY-MSG    PIC X(80).
+
+       PROCEDURE DIVISION.
+       MAIN-LOGIC.
+           OPEN INPUT {{ program.input_file.name }}
+           OPEN OUTPUT {{ program.output_file.name }}
+
+           PERFORM UNTIL WS-EOF-SWITCH = 'Y'
+               READ {{ program.input_file.name }}
+                   AT END
+                       MOVE 'Y' TO WS-EOF-SWITCH
+                   NOT AT END
+                       ADD 1 TO WS-RECORD-COUNT
+                       MOVE {{ program.input_file.name }}-RECORD
+                            TO {{ program.output_file.name }}-RECORD
+                       WRITE {{ program.output_file.name }}-RECORD
+               END-READ
+           END-PERFORM
+
+           CLOSE {{ program.input_file.name }}
+           CLOSE {{ program.output_file.name }}
+
+           STRING "总处理记录数: " DELIMITED BY SIZE
+                  WS-RECORD-COUNT DELIMITED BY SIZE
+                  INTO WS-DISPLAY-MSG
+           DISPLAY WS-DISPLAY-MSG
+
+           STOP RUN.
+
