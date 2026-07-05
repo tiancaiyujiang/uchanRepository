@@ -25,6 +25,7 @@ dist/
 
 # Test / temporary outputs
 CobolGenerater/tmp_test/
+dataSet/full_flow_test.csv
 *.exe
 *.cbl
 !test/*.cbl
