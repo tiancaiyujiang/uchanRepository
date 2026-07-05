@@ -1,11 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
 
+# 以 .spec 文件所在目录为基准，便于在其他机器上打包
+spec_dir = os.path.abspath(SPECPATH)
 
 a = Analysis(
-    ['D:/ZHYCobolGenerator/workspace/CobolGenerater/main.py'],
-    pathex=[],
+    [os.path.join(spec_dir, 'main.py')],
+    pathex=[spec_dir],
     binaries=[],
-    datas=[('D:/ZHYCobolGenerator/workspace/CobolGenerater/templates', 'templates')],
+    datas=[(os.path.join(spec_dir, 'templates'), 'templates')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
