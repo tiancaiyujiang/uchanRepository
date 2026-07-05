@@ -216,8 +216,9 @@ def main():
         f.write(code)
 
     print(code)
+    cobc_path = os.environ.get("COBC_PATH", "D:/ZHYCobolGenerator/GC32M-BDB-x64/bin/cobc")
     res = subprocess.run(
-        ["D:/ZHYCobolGenerator/GC32M-BDB-x64/bin/cobc", "-free", "-x", "-o", exe_path, src_path],
+        [cobc_path, "-free", "-x", "-o", exe_path, src_path],
         capture_output=True, text=True,
     )
     print("STDERR:", res.stderr)
